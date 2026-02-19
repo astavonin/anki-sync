@@ -22,11 +22,20 @@ Bidirectional vocabulary synchronization between local YAML files and Anki Deskt
 ## Installation
 
 ```bash
-# Install with anki dependencies
-pip install -e ".[anki]"
+pipx install git+https://github.com/astavonin/anki-sync.git
+```
 
-# For development (includes test dependencies)
-pip install -e ".[anki,dev]"
+To upgrade:
+
+```bash
+pipx upgrade anki-sync
+```
+
+For development (editable install from local clone):
+
+```bash
+git clone git@github.com:astavonin/anki-sync.git ~/projects/anki-sync
+pipx install -e ~/projects/anki-sync
 ```
 
 ## Quick Start
@@ -351,7 +360,7 @@ anki_sync/
 ### Running Tests
 
 ```bash
-pytest tests/anki_sync/ -v
+pytest tests/ -v
 ```
 
 ### Code Quality
@@ -371,7 +380,7 @@ mypy anki_sync/
 ### Test Coverage
 
 ```bash
-pytest tests/anki_sync/ --cov=anki_sync --cov-report=html
+pytest tests/ --cov=anki_sync --cov-report=html
 ```
 
 ## Troubleshooting
